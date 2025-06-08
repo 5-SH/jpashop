@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.junit.jupiter.api.Test;
 
 @SpringBootTest
-public class MemberRepositoryTest {
+public class MemberServiceTest {
 
     @Autowired
     MemberRepository memberRepository;
