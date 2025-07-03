@@ -40,7 +40,7 @@ public class Order {
     // 연관관계 편의 메서드
     public void setMember(Member member) {
        this.member = member;
-       member.getOrder().add(this);
+       member.getOrders().add(this);
     }
 
     public void addOrderItem(OrderItem orderItem) {
@@ -75,6 +75,10 @@ public class Order {
     }
 
     public int getTotalPrice() {
-        return orderItems.stream().mapToInt(OrderItem::getTotalPrice).sum();
+        int totalPrice = 0;
+        for (OrderItem orderItem : orderItems) {
+            totalPrice += orderItem.getTotalPrice();
+        }
+        return totalPrice;
     }
 }
